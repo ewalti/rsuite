@@ -51,12 +51,10 @@ node_modules
 _build
 build
 .DS_Store
-lib/
 es/
 .idea
 karma.sauce.conf.js
 dev-publish.sh
-dist
 docs/out/
 /types
 /less/

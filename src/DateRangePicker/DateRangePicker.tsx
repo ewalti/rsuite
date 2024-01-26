@@ -77,6 +77,12 @@ export interface DateRangePickerProps
   /** Predefined date ranges */
   ranges?: RangeType[];
 
+  /** Custom cell classes base on it's date */
+  cellClassName?: (date: Date) => string | undefined;
+
+  /** Custom rendering cell*/
+  renderCell?: (date: Date) => React.ReactNode;
+
   /** Format date */
   format?: string;
 
@@ -237,6 +243,8 @@ const DateRangePicker: DateRangePicker = React.forwardRef((props: DateRangePicke
     onSelect,
     onShortcutClick,
     renderTitle,
+    renderCell,
+    cellClassName,
     ...restProps
   } = props;
 
@@ -760,7 +768,9 @@ const DateRangePicker: DateRangePicker = React.forwardRef((props: DateRangePicke
       onMouseMove: handleMouseMove,
       onSelect: handleSelectDate,
       onToggleMeridian: handleToggleMeridian,
-      renderTitle
+      renderTitle,
+      renderCell,
+      cellClassName
     };
 
     const sideRanges = ranges?.filter(range => range?.placement === 'left') || [];

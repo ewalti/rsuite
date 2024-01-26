@@ -57,14 +57,17 @@ export { default as lastDayOfMonth } from 'date-fns/lastDayOfMonth';
 
 const disabledTimeProps = ['disabledHours', 'disabledMinutes', 'disabledSeconds'];
 const hideTimeProps = ['hideHours', 'hideMinutes', 'hideSeconds'];
+const otherProps = ['renderCell', 'cellClassName'];
 export type CalendarOnlyPropsType =
   | 'disabledHours'
   | 'disabledMinutes'
   | 'disabledSeconds'
   | 'hideHours'
   | 'hideMinutes'
-  | 'hideSeconds';
-export const calendarOnlyProps = disabledTimeProps.concat(hideTimeProps) as CalendarOnlyPropsType[];
+  | 'hideSeconds'
+  | 'renderCell'
+  | 'cellClassName';
+export const calendarOnlyProps = disabledTimeProps.concat(hideTimeProps).concat(otherProps) as CalendarOnlyPropsType[];
 
 function validTime(calendarProps: any, date: Date) {
   if (!date) {

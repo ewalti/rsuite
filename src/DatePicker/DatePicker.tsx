@@ -67,6 +67,9 @@ export interface DatePickerProps
   /** Custom caret component */
   caretAs?: React.ElementType | null;
 
+  /** Custom cell classes base on it's date */
+  cellClassName?: (date: Date) => string | undefined;
+
   /** Calendar panel default presentation date and time */
   calendarDefaultDate?: Date;
 
@@ -113,6 +116,9 @@ export interface DatePickerProps
 
   /** Whether read only the component */
   readOnly?: boolean;
+
+  /** Custom rendering cell*/
+  renderCell?: (date: Date) => React.ReactNode;
 
   /** Predefined date Ranges */
   ranges?: RangeType<Date>[];

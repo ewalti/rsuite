@@ -74,9 +74,7 @@
     "react-dom": ">=16.8.0"
   },
   "files": [
-    "CHANGELOG.md",
-    "README.md",
-    "lib"
+    "*"
   ],
   "devDependencies": {
     "@babel/cli": "^7.7.0",
